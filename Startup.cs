@@ -47,6 +47,7 @@ namespace CRUDelicious
             }
 
             app.UseSession();
+            app.UseStaticFiles();
             app.UseMvc();
 
         }

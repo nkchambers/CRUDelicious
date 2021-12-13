@@ -23,7 +23,7 @@ namespace CRUDelicious.Controllers
         public IActionResult Index()
         {
             ViewBag.AllDishes = _context.Dishes
-            .ToArray();
+            .OrderByDescending(dish => dish.CreatedAt);
 
             return View();
         }
@@ -36,6 +36,7 @@ namespace CRUDelicious.Controllers
         }
 
 
+        //GET NEW DISH FORM 
         [HttpGet("new_dish")]
         public ViewResult NewDishForm()
         {
@@ -43,6 +44,7 @@ namespace CRUDelicious.Controllers
         }
 
 
+        //CREATE DISH - POST TO DB & RETURN TO HOME PAGE (INDEX)
         [HttpPost("create")]
         public IActionResult NewDish(Dish fromForm)
         {
@@ -53,14 +55,7 @@ namespace CRUDelicious.Controllers
                 _context.SaveChanges();
 
                 //Something cool we can do
-                Console.WriteLine(fromForm.DishId);
-
-
-                /*HttpContext.Session.SetString("ChefName", fromForm.ChefName);
-                HttpContext.Session.SetString("DishName", fromForm.DishName);
-                HttpContext.Session.SetInt32("Calories", (int)fromForm.Calories);
-                HttpContext.Session.SetInt32("Tastiness", (int)fromForm.Tastiness);
-                HttpContext.Session.SetString("Description", fromForm.Description);*/
+                //Console.WriteLine(fromForm.DishId);
 
                 return RedirectToAction ("Index");
             }
@@ -71,13 +66,21 @@ namespace CRUDelicious.Controllers
         }
 
 
-        [HttpGet("info/{dishId}")]
+        //GET ONE DISH INFO VIA LINK REFERENCE
+        [HttpGet("{dishId}")]
         public IActionResult DishInfo(int dishId)
         {
-            Dish DishToRender = _context.Dishes
+            Dish model = _context.Dishes
             .FirstOrDefault(dish => dish.DishId == dishId);
 
-            return View(DishToRender);
+            if(model == null)
+            {
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View("DishInfo");
+            }
         }
 
     }

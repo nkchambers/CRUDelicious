@@ -43,7 +43,6 @@ C:\Users\nick8\Desktop\C#\CRUDelicious\obj\Debug\netcoreapp3.1\CRUDelicious.TagH
 C:\Users\nick8\Desktop\C#\CRUDelicious\obj\Debug\netcoreapp3.1\CRUDelicious.TagHelpers.output.cache
 C:\Users\nick8\Desktop\C#\CRUDelicious\obj\Debug\netcoreapp3.1\CRUDelicious.RazorCoreGenerate.cache
 C:\Users\nick8\Desktop\C#\CRUDelicious\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
-C:\Users\nick8\Desktop\C#\CRUDelicious\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
 C:\Users\nick8\Desktop\C#\CRUDelicious\obj\Debug\netcoreapp3.1\CRUDelicious.RazorTargetAssemblyInfo.cache
 C:\Users\nick8\Desktop\C#\CRUDelicious\obj\Debug\netcoreapp3.1\CRUDelicious.RazorTargetAssemblyInfo.cs
 C:\Users\nick8\Desktop\C#\CRUDelicious\obj\Debug\netcoreapp3.1\CRUDelicious.Views.pdb
@@ -55,3 +54,4 @@ C:\Users\nick8\Desktop\C#\CRUDelicious\obj\Debug\netcoreapp3.1\CRUDelicious.pdb
 C:\Users\nick8\Desktop\C#\CRUDelicious\obj\Debug\netcoreapp3.1\CRUDelicious.genruntimeconfig.cache
 C:\Users\nick8\Desktop\C#\CRUDelicious\obj\Debug\netcoreapp3.1\Razor\Views\Home\NewDish.cshtml.g.cs
 C:\Users\nick8\Desktop\C#\CRUDelicious\obj\Debug\netcoreapp3.1\Razor\Views\Home\DishInfo.cshtml.g.cs
+C:\Users\nick8\Desktop\C#\CRUDelicious\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs

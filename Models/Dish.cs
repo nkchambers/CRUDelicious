@@ -28,7 +28,8 @@ namespace CRUDelicious.Models
                 
         
         [Display(Name = "# of Calories")]
-        [Required(ErrorMessage ="Calorie input must be greater than 0.")]
+        [Required(ErrorMessage ="Calories must be greater than 1.")]
+        [Range(1,  Int32.MaxValue)]
         public int? Calories { get; set; }
 
 

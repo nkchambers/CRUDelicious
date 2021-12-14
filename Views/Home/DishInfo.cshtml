@@ -11,13 +11,31 @@
     </head>
     
     <body>
+        <div id="container" style="margin: 0px auto;">
+            
+            <div class="header" style="text-align: center; background-color: #1d3030; color: skyblue;">
+                <a href="/return_home"><button style="margin-left: 1500px; padding: 10px 30px; font-size: 20px; margin-top: 20px;">Home</button></a>
+                <h1 style="font-size: 40px; padding-top: 10px;">@Model.DishName</h1>
+                <h3 style="font-size: 30px; padding-bottom: 40px;">by Chef  @Model.ChefName</h3>
+            </div>
 
-            <h1 style="text-align: center;">@Model.DishName</h1><br>
-            <h3 style="text-align: center;">@Model.ChefName</h3><br><br>
-            <p>Description: @Model.Description</p><br>
-            <p>Tastiness: @Model.Tastiness</p><br>
-            <p>Colories: @Model.Calories</p>
-        
+            <div class="body" style="text-align: center; background-color: #1d3030; color: skyblue; font-size: 25px; font-weight: bold; padding-bottom: 20px; padding-top: 20px; margin-bottom: 20px;">
+                <p style="text-decoration: underline;">Description</p>
+                <p>@Model.Description</p><br>
+
+                <p style="text-decoration: underline;">Tastiness Level</p>
+                <p>@Model.Tastiness</p><br>
+
+                <p style="text-decoration: underline;"># of Colories</p>
+                <p>@Model.Calories</p>
+            </div>
+
+            <div class="footer" style="display: flex; background-color: #1d3030; color: skyblue; padding: 25px 0px;">
+                <a href="/dish/edit/@Model.DishId"><button style="padding: 10px 30px; font-size: 20px; margin-left: 500px;">Edit</button></a>
+                <a href="/dish/delete/@Model.DishId"><button style="padding: 10px 30px; font-size: 20px; margin-left: 800px;">Delete</button></a>
+            </div>
+
+        </div>
 
     </body>
 </html>

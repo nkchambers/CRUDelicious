@@ -18,14 +18,14 @@ namespace CRUDelicious.Controllers
 
         }
 
-
         [HttpGet("")]
         public IActionResult Index()
         {
-            ViewBag.AllDishes = _context.Dishes
-            .OrderByDescending(dish => dish.CreatedAt);
+            List<Dish> AllDishes = _context.Dishes
+            .OrderByDescending(dish => dish.CreatedAt)
+            .ToList();
 
-            return View();
+            return View(AllDishes);
         }
 
 
@@ -45,7 +45,7 @@ namespace CRUDelicious.Controllers
 
 
         //CREATE DISH - POST TO DB & RETURN TO HOME PAGE (INDEX)
-        [HttpPost("create")]
+        [HttpPost("dish/create")]
         public IActionResult NewDish(Dish fromForm)
         {
             if(ModelState.IsValid)
@@ -67,20 +67,71 @@ namespace CRUDelicious.Controllers
 
 
         //GET ONE DISH INFO VIA LINK REFERENCE
-        [HttpGet("{dishId}")]
+        [HttpGet("dish/{dishId}")]
         public IActionResult DishInfo(int dishId)
         {
-            Dish model = _context.Dishes
+            Dish toRender = _context.Dishes
+            .FirstOrDefault(dish => dish.DishId == dishId);
+                
+            return View(toRender);
+        }
+
+
+        //GET EDIT DiSH FORM
+        [HttpGet("dish/edit/{dishId}")]
+        public IActionResult EditDish(int dishId)
+        {
+            Dish toEdit = _context.Dishes
             .FirstOrDefault(dish => dish.DishId == dishId);
 
-            if(model == null)
+            if(toEdit == null)
             {
                 return RedirectToAction("Index");
             }
+
+            return View("EditDish", toEdit);
+        }
+
+
+        //UPDATE DISH WITH NEW INFO IN DB - POST
+        [HttpPost("dish/update/{dishId}")]
+        public IActionResult UpdateDish(int dishId, Dish fromForm)
+        {
+            if (ModelState.IsValid)
+            {
+                Dish inDb = _context.Dishes
+                .FirstOrDefault(dish => dish.DishId == dishId);
+
+                inDb.DishName = fromForm.DishName;
+                inDb.ChefName = fromForm.ChefName;
+                inDb.Tastiness = fromForm.Tastiness;
+                inDb.Calories = fromForm.Calories;
+                inDb.Description = fromForm.Description;
+                inDb.UpdatedAt = DateTime.Now;
+
+                _context.SaveChanges();
+
+                return RedirectToAction("DishInfo", new { dishId = dishId });
+            }
             else
             {
-                return View("DishInfo");
+                return EditDish(dishId);
             }
+        }
+
+
+        //DELETE DISH FROM DB
+        [HttpGet("dish/delete/{dishId}")]
+
+        public RedirectToActionResult DeleteDishFromSession(int dishId)
+        {
+                Dish toDelete = _context.Dishes
+                .FirstOrDefault(dish => dish.DishId == dishId);
+
+                _context.Dishes.Remove(toDelete);
+                _context.SaveChanges();
+                
+                return RedirectToAction("Index");
         }
 
     }

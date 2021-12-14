@@ -10,14 +10,13 @@
     <title>CRUDelicious</title>
 </head>
 <body>
-    
     <div id="container" style="margin: 0px auto;">
 
-        <h1 style="text-align: center; font-size: 50px;">Add New Dish!</h1>
+        <h1 style="text-align: center; font-size: 50px;">Edit @Model.DishName</h1>
         <br><br>
         <a href="return_home"><button style="margin-left: 1500px; padding: 10px 30px; font-size: 20px;">Home</button></a>
 
-        <form asp-action="NewDish" 
+        <form asp-action="UpdateDish" 
             style="display: flex; margin-top: 100px; background-color: #1d3030; color: skyblue; align-items: center; padding: 150px 0px; font-size: 25px;">
             
             <div class="lef-col" style="flex: 1; margin-left: 100px;">
@@ -62,7 +61,7 @@
                     <textarea asp-for="Description" rows="4" cols="50"></textarea> 
                 </div>
 
-                <button type="submit" style="margin-top: 30px; padding: 8px 26px; font-size: 20px;">Submit</button>
+                <button type="submit" style="margin-top: 30px; padding: 8px 26px; font-size: 20px;">Update Dish</button>
 
             </div>
         </form>

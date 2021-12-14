@@ -1,5 +1,4 @@
-
-@model CRUDelicious.Models.Dish
+@model List<CRUDelicious.Models.Dish>
 
 
 <!DOCTYPE html>
@@ -33,10 +32,10 @@
                         <th>Dish Name</th>
                         <th>Chef's Name</th>
                     </tr>
-                    @foreach(var dish in ViewBag.AllDishes)
+                    @foreach(var dish in Model)
                     {
                         <tr>
-                            <td><a href="{dishId}" style="color: skyblue;">@dish.DishName</a></td>
+                            <td><a href="dish/@dish.DishId" style="color: skyblue;">@dish.DishName</a></td>
                             <td>@dish.ChefName</td>
                         </tr>
                     }

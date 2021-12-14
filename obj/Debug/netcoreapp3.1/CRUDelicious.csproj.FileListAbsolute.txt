@@ -55,3 +55,4 @@ C:\Users\nick8\Desktop\C#\CRUDelicious\obj\Debug\netcoreapp3.1\CRUDelicious.genr
 C:\Users\nick8\Desktop\C#\CRUDelicious\obj\Debug\netcoreapp3.1\Razor\Views\Home\NewDish.cshtml.g.cs
 C:\Users\nick8\Desktop\C#\CRUDelicious\obj\Debug\netcoreapp3.1\Razor\Views\Home\DishInfo.cshtml.g.cs
 C:\Users\nick8\Desktop\C#\CRUDelicious\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
+C:\Users\nick8\Desktop\C#\CRUDelicious\obj\Debug\netcoreapp3.1\Razor\Views\Home\EditDish.cshtml.g.cs

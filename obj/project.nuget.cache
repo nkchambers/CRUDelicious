@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DUA4K8DLpmDKx6t8zFFekqcgShZtMMrTygKnuG92KhlfQPek0+aWwFPXhrsABVCPsfG6o5OKJfdNfJ2EHjCeqA==",
+  "dgSpecHash": "X3mOrgfUNq1UnPZtpOoHk7chwPi0soboyT2BS9d2/7CHZB82tgPy0Cn6B/jsRuJflVtfOTfhZ1Pgp2f4y0pUvg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\nick8\\Desktop\\C#\\CRUDelicious\\CRUDelicious.csproj",
+  "projectFilePath": "C:\\Users\\nick8\\Desktop\\Coding_Dojo\\C#\\CRUDelicious\\CRUDelicious.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nick8\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\nick8\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",
